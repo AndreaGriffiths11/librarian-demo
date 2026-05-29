@@ -4,13 +4,22 @@ A small Python harness that measures the real dollar cost of three
 multi-agent code-review architectures against the same pull request diff.
 
 Headline numbers, 5 reviewer agents reading a 16K-token PR on Claude Opus 4.6
-(Anthropic API list prices):
+(Anthropic API list prices, May 29 2026):
 
-| Mode | Cost per PR pass | vs naive |
+| Mode | Input | Cached | Output | Total |
+|---|---|---|---|---|
+| Naive | 80,248 | 0 | 1,500 | **\$1.316** |
+| Cache | 80,268 | 63,968 (4/5 calls) | 1,500 | **\$0.453** |
+| Librarian | 20,915 | 0 | 2,300 | **\$0.486** |
+
+Cache wins on warm series, librarian wins on cold-every-call (the operational
+reality for review bots that run on PRs from many devs across many repos):
+
+| Mode | Warm series (5 calls back-to-back) | Cold every call |
 |---|---|---|
-| Naive (each agent re-reads diff) | **$1. |316** | 
-66% |
-63% |
+| Naive | \$1.32 | \$1.32 |
+| Cache | \$0.45 | \$1.32 |
+| Librarian | \$0.49 | \$0.49 |
 
 Full writeup and methodology in [`runs/findings.md`](runs/findings.md).
 
