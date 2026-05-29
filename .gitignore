@@ -1,0 +1,13 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+
+# Hide ad-hoc runs by default, keep only the ones backing the published numbers.
+runs/*
+!runs/findings.md
+!runs/2026-05-29-opus-large-n5.txt
+!runs/2026-05-29-opus-small-librarian.txt
+!runs/2026-05-29-opus-small-cache-soft.txt
+!runs/2026-05-29-opus-small-cache-confirm.txt

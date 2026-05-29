@@ -1,0 +1,49 @@
+Running mode(s): cache on claude-opus-4.6 (sample_pr.diff, 11,257 chars)
+
+▸ cache ...
+
+CACHE MISS DETECTED on cache/tests (call #2). Continuing anyway (--soft-cache).
+Possible causes:
+  - System message is below the 1024-token cache minimum (this call's prompt: 4003 tokens)
+  - System message differs across calls (something varying got into it - timestamps, UUIDs, etc.)
+  - Cache eviction (>5-10 min between calls)
+  - Provider routing - load balancer hit a worker without the warmed prefix
+
+CACHE MISS DETECTED on cache/perf (call #3). Continuing anyway (--soft-cache).
+Possible causes:
+  - System message is below the 1024-token cache minimum (this call's prompt: 4012 tokens)
+  - System message differs across calls (something varying got into it - timestamps, UUIDs, etc.)
+  - Cache eviction (>5-10 min between calls)
+  - Provider routing - load balancer hit a worker without the warmed prefix
+
+CACHE MISS DETECTED on cache/observability (call #4). Continuing anyway (--soft-cache).
+Possible causes:
+  - System message is below the 1024-token cache minimum (this call's prompt: 4019 tokens)
+  - System message differs across calls (something varying got into it - timestamps, UUIDs, etc.)
+  - Cache eviction (>5-10 min between calls)
+  - Provider routing - load balancer hit a worker without the warmed prefix
+
+CACHE MISS DETECTED on cache/api-design (call #5). Continuing anyway (--soft-cache).
+Possible causes:
+  - System message is below the 1024-token cache minimum (this call's prompt: 4015 tokens)
+  - System message differs across calls (something varying got into it - timestamps, UUIDs, etc.)
+  - Cache eviction (>5-10 min between calls)
+  - Provider routing - load balancer hit a worker without the warmed prefix
+
+Per-call breakdown
+──────────────────────────────────────────────────────────────────────────────
+  mode/call                input  cached  output   wall   cost
+  ────────────────────────────────────────────────────────────────────────────
+  cache/security            4004       -     300   7.9s   $0.0826
+  cache/tests               4003       -     300  11.0s   $0.0825
+  cache/perf                4012       -     300   7.8s   $0.0827
+  cache/observability       4019       -     300   7.9s   $0.0828
+  cache/api-design          4015       -     300   7.1s   $0.0827
+  CACHE TOTAL              20053       0    1500          $0.4133
+  ────────────────────────────────────────────────────────────────────────────
+
+
+  Librarian sub-agent demo  (claude-opus-4.6)
+  --------------------------------------------------
+  CACHE       $0.4133
+

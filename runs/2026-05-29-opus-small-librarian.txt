@@ -1,0 +1,22 @@
+Running mode(s): librarian on claude-opus-4.6 (sample_pr.diff, 11,257 chars)
+
+▸ librarian ...
+
+Per-call breakdown
+──────────────────────────────────────────────────────────────────────────────
+  mode/call                input  cached  output   wall   cost
+  ────────────────────────────────────────────────────────────────────────────
+  librarian/digest          4034       -     800  20.9s   $0.1205
+  librarian/security         961       -     300   5.6s   $0.0369
+  librarian/tests            960       -     300   5.6s   $0.0369
+  librarian/perf             969       -     300   7.5s   $0.0370
+  librarian/observability     976       -     300   7.0s   $0.0371
+  librarian/api-design       972       -     300   9.3s   $0.0371
+  LIBRARIAN TOTAL           8872       0    2300          $0.3056
+  ────────────────────────────────────────────────────────────────────────────
+
+
+  Librarian sub-agent demo  (claude-opus-4.6)
+  --------------------------------------------------
+  LIBRARIAN   $0.3056
+
