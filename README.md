@@ -54,6 +54,8 @@ list rates.
    The same call shape against the same model at 16K tokens hit the cache 4 of
    5 times. The activation curve is not flat. Model your hit rate as a band.
 
+> Cache is dramatic when it activates and worthless when it doesn't. The librarian's savings are baked into call shape, not runtime state.
+
 ## Auth: use your GitHub Copilot subscription
 
 The harness authenticates against the GitHub Copilot proxy
